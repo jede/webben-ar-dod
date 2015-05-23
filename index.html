@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/flat.css" id="theme">
+		<link rel="stylesheet" href="css/theme/confetti.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -38,8 +38,11 @@
         background: url('/images/warning.gif');
       }
 
-      .slide-confetti .reveal .state-background {
-        background-color: #00C2DB;
+      .slide-confetti .confetti-logo {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .slide-warning  h1 {
         text-shadow: 0 1px 88px hsl(0, 0%, 0%);
@@ -57,7 +60,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <section>
-          <h1>THE API<br>OF<br>THE API</h1>
+          <h1>The API<br>of<br>The API</h1>
           <p style="margin-top: 90px">
             <a href="http://edelst.am">Johannes Edelstam</a> / <a href="http://twitter.com/jede">@jede</a>
           </p>
@@ -68,8 +71,7 @@
           </aside>
         </section>
 
-        <section data-state="slide-confetti">
-          <img src="/images/confetti.png">
+        <section data-state="slide-confetti" data-background="/images/confetti.jpg">
         </section>
 
         <section>
@@ -379,7 +381,7 @@
           store.sync(data);
 
           // Now our event should be here
-          event = store.find('events', id);
+    event = store.find('events', id);
 
           event.attendees[0].name // => Christer Fuglesang
         });
@@ -454,7 +456,7 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
