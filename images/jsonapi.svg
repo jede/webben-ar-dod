@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <rect id="Rectangle-1" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="251" height="79"></rect>
+        <rect id="Rectangle-1" fill="none" sketch:type="MSShapeGroup" x="0" y="0" width="251" height="79"></rect>
         <text id="json:api" sketch:type="MSTextLayer" font-family="American Typewriter" font-size="36" font-weight="normal" letter-spacing="1.25">
             <tspan x="55" y="49" fill="#000000">json</tspan>
             <tspan x="130.776" y="49" fill="#9B9B9B">:</tspan>

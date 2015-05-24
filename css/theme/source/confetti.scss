@@ -13,13 +13,14 @@
 
 // Include theme-specific fonts
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900);
 
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #FFFC39;
 
-$mainColor: #222;
-$headingColor: #222;
+$mainColor: hsl(30, 4%, 15%);
+$headingColor: hsl(30, 4%, 15%);
 
 $mainFontSize: 38px;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
@@ -27,15 +28,26 @@ $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
-$headingFontWeight: 600;
+$headingFontWeight: 900;
 $linkColor: #5304B2;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
+$headingMargin: 0 0 1.4em 0;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-kerning: normal;
+}
+
 
 section.has-dark-background {
 	&, h1, h2, h3, h4, h5, h6 {
@@ -67,4 +79,8 @@ section.has-dark-background {
 .reveal section img {
   border: none;
   box-shadow: none;
+}
+
+.reveal pre code {
+  color: hsl(0, 0%, 96%);
 }
