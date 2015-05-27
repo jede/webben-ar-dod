@@ -37,7 +37,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .alias .hljs-keyword,
 .hljs-literal,
 .hljs-hexcolor {
-  color: hsl(267, 96%, 75%);
+  color: hsl(59, 100%, 75%);
 }
 
 .hljs-tag .hljs-value,
@@ -127,7 +127,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-prompt,
 .hljs-link_label,
 .hljs-link_url {
-  color: hsl(59, 100%, 75%);
+  color: hsl(267, 100%, 80%);
 }
 
 .hljs-comment,

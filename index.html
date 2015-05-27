@@ -59,7 +59,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-        <section>
+        <section data-background="/images/intro-bg.jpg" data-state="has-dark-background">
           <h1>The API<br>of<br>The API</h1>
           <p style="margin-top: 90px">
             <a href="http://edelst.am">Johannes Edelstam</a> / <a href="http://twitter.com/jede">@jede</a>
@@ -71,7 +71,46 @@
           </aside>
         </section>
 
+        <section data-background="/images/bikeshed/powerplant4b.jpg">
+          <aside class="notes">
+            Cyril Northcote Parkinson 1957
+          </aside>
+        </section>
+
+        <section data-background="/images/bikeshed/powerplant-complicated.gif">
+        </section>
+
+        <section data-background="white">
+          <img src="/images/bikeshed/bikeshed1.jpg">
+        </section>
+
+        <section data-background="/images/bikeshed/parkinsons-law3.jpg">
+        </section>
+
         <section data-state="slide-confetti" data-background="/images/confetti.jpg">
+        </section>
+
+        <section data-markdown data-background="/images/map.jpg" data-state="has-dark-background">
+        <script type="text/template">
+          # Agenda
+
+          <aside class="notes">
+            30 mins now and hopefully we’ll have time for some questions at the end.
+
+            End pointless discussions, Future proof, how to make it happen
+          </aside>
+        </script>
+      </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🔨</div>
+          ## JSON API
+
+          <aside class="notes">
+            So how many of you have built a JSON API?
+          </aside>
+        </script>
         </section>
 
         <section>
@@ -79,24 +118,17 @@
         </section>
 
         <section>
-          <img src="/images/jsonapi.png">
+          <img src="/images/jsonapi2.png">
+        </section>
+
+        <section>
+          <img src="/images/rest.svg">
         </section>
 
         <section data-markdown>
 					<script type="text/template">
-            ### POST
-            ### GET
-            ### PUT
-            ### DELETE
-            ### PATCH
-          </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            ### GET /event/1
-
-            ```js
+            <h3 class="heading-mono">GET /events/1</h3>
+            ```json
             {
               "id": 1,
               "title": "sthlm.js meetup #1340 at the ISS space station!"
@@ -107,8 +139,8 @@
 
         <section data-markdown>
 					<script type="text/template">
-            ### GET /event/1/attendees
-            ```js
+            <h3 class="heading-mono">GET /events/1/attendees</h3>
+            ```json
             [{
               "id": 1,
               "name": "Christer Fuglesang"
@@ -119,8 +151,8 @@
 
         <section data-markdown>
 					<script type="text/template">
-            ### GET /event/1
-            ```js
+            <h3 class="heading-mono">GET /events/1</h3>
+            ```json
             {
               "id": 1,
               "title": "sthlm.js meetup #1340 at the ISS space station!",
@@ -135,8 +167,8 @@
 
         <section data-markdown>
 					<script type="text/template">
-            ### GET /event/1
-            ```js
+            <h3 class="heading-mono">GET /event/1</h3>
+            ```json
             {
               "id": 1,
               "title": "sthlm.js meetup #1340 at the ISS space station!",
@@ -146,7 +178,7 @@
                 "events": [{
             ```
             ![](/images/explosion.gif)
-            ```js
+            ```json
                 }]
               }]
             }
@@ -156,28 +188,19 @@
 
         <section data-background="white">
           <img src="/images/jsonapi.svg" style="width: 100%;">
-        </section>
-
-        <section data-state="slide-warning">
-          <h1>UNSTABLE SPEC AHEAD</h1>
           <aside  class="notes">
-            Avoid bikeshedding
+            Avoid bikeshedding. 1.0 released yesterday!!
           </aside>
-        </section>
-
-        <section>
-          <img src="/images/almost.png">
         </section>
 
         <section data-markdown>
 					<script type="text/template">
-            ### GET /event/1
-
+            <h3 class="heading-mono">GET /event/1</h3>
             ```json
             {
               "data": {
                 "type": "events",
-                "id": 1,
+                "id": "1",
                 "attributes": {
                   "title": "sthlm.js meetup #1340 at the ISS space station!"
                 }
@@ -189,14 +212,13 @@
 
         <section data-markdown>
 					<script type="text/template">
-            ### GET /events
-
+            <h3 class="heading-mono">GET /events</h3>
 ```json
 {
   "data": [
     {
       "type": "events",
-      "id": 1,
+      "id": "1",
       "attributes": {
         "title": "sthlm.js meetup #1340 at the ISS space station!"
       }
@@ -216,14 +238,14 @@
             {
               "data": {
                 "type": "events",
-                "id": 1,
+                "id": "1",
                 "attributes": {
                   "title": "sthlm.js meetup #1340 at the ISS space station!"
                 },
                 "relationships": {
                   "attendees": {
                     "data": [
-                      {"type": "people", "id": 5}
+                      {"type": "people", "id": "5"}
                     ]
                   }
                 }
@@ -233,8 +255,6 @@
             ```
           </script>
 
-          </section>
-          <section data-background="/images/vogue.gif">
           </section>
         </section>
         <section>
@@ -247,13 +267,13 @@
               },
               "included": {
                 "type": "people",
-                "id": 5,
+                "id": "5",
                 "attributes": {
                   "name": "Christer Fuglesang",
                 },
                 "relationships": {
                   "event": {
-                    "data": {"type": "events", "id": 1}
+                    "data": {"type": "events", "id": "1"}
                   }
                 }
               }
@@ -262,7 +282,7 @@
           </script>
 
           </section>
-          <section data-background="/images/vogue.gif">
+          <section data-background="/images/woow.gif">
           </section>
         </section>
 
@@ -278,8 +298,8 @@
           "related": "http://confetti.events/events/1/attendees"
         },
         "data" : [
-          {"type": "people", "id": 5},
-          {"type": "people", "id": 6}
+          {"type": "people", "id": "5"},
+          {"type": "people", "id": "6"}
         ]
       }
     }
@@ -287,6 +307,9 @@
   }
 }
 ```
+<aside class="notes">
+  Computers read the documentation. Singularity.
+</aside>
         </script>
         </section>
 
@@ -316,64 +339,98 @@
 
         <section data-markdown>
         <script type="text/template">
-          ```json
-          {
-            "events": {
-              "id": 1,
-              "type": "events",
-              "href": "https://api.confetti.events/events/1",
-              "links": {
-                ...
-              }
-            }
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ## Top level
-          ```json
-          {
-            "links": { ... },
-            "linked": { ... },
-            "meta": { ... },
-
-
-            "events": {
-              ...
-            }
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```json
-          {
-            "meta": {
-              "last": "/events?limit=10&offset=0",
-              "next": null,
-              "href": "/events?limit=10&offset=0",
-              "limit": 10,
-              "offset": 0,
-              "previous": null,
-              "total": 0,
-              "first": "/events?limit=10&offset=0"
-            },
-
-            ...
-          }
-          ```
+          <div class="emoji">📚</div>
+          ## Pagination
         </script>
         </section>
 
 
         <section data-markdown>
         <script type="text/template">
+```json
+{
+  "links": {
+    "self": "http://confetti.events/events",
+    "first": "http://confetti.events/events?page=1",
+    "next": "http://confetti.events/events?page=2",
+    "prev": null,
+    "last": "http://confetti.events/events?page=500"
+  },
+  "meta": {
+    "count": 10000,
+    "perPage": 20,
+    "currentPage": 1
+  },
+  "data": ... ,
+  "included": ...
+}
+```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🐣</div>
+          ## CRUD
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+```json
+POST /events
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{
+  "data": {
+    "type": "events",
+    "attributes": {
+      "title": "I T.A.K.E. Unconference 2016",
+    }
+  }
+}
+```
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+```json
+PATCH /articles/1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{
+  "data": {
+    "type": "articles",
+    "id": "1",
+    "attributes": {
+      "title": "Rails is a Melting Pot"
+    },
+    "relationships": {
+      "author": {
+        "data": { "type": "people", "id": "1" }
+      }
+    }
+  }
+}
+```
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">📡</div>
           ## JSON Patch format
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
           ```json
           PATCH /photos
           Content-Type: application/json-patch+json
@@ -411,37 +468,51 @@
         </script>
         </section>
 
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🍬</div>
+          ## Much more
+
+          <aside class="notes">
+            <p>
+              Errors, Updating relations.
+            </p>
+            <p>
+              See what I mean? You can move faster!
+            </p>
+          </aside>
+        </script>
+        </section>
+
         <section data-background="/images/why.gif">
+        </section>
+
+        <section data-background="/images/nordicjs.jpg">
+          <h1 class="slide-nordicjs-logo">Nordic.js</h1>
         </section>
 
         <section data-markdown>
         <script type="text/template">
-          ## YAYSON
-          [github.com/confetti/yayson](https://github.com/confetti/yayson)
-
-          npm install yayson
+          `$ npm install yayson`
         </script>
         </section>
 
 
         <section data-markdown>
         <script type="text/template">
-        ```javascript
+        ```coffeescript
+        yayson = require('yayson')()
+        Store = yayson.Store
+        store = new Store()
 
-        var Store = require('yayson').Store,
-            store = new Store();
+        service.get '/events/' + id, (data) ->
+          # Store whatever we got
+          event = store.sync(data)
 
-        service.get('/events/' + id).then(function(data) {
+          # Now our event should be here
+          event = store.find('events', id)
 
-          // Store whatever we got
-          store.sync(data);
-
-          // Now our event should be here
-    event = store.find('events', id);
-
-          event.attendees[0].name // => Christer Fuglesang
-        });
-
+          event.attendees[0].name # => Christer Fuglesang
         ```
         </script>
         </section>
@@ -449,13 +520,14 @@
         <section data-markdown>
         <script type="text/template">
         ```coffee
-        Presenter = require('yayson').presenter()
+        yayson = require('yayson')()
+        Presenter = yayson.Presenter
         PersonPresenter = require('./person-presenter')
 
         class EventPresenter extends Presenter
-          name: 'event'
+          type: 'events'
 
-          serialize: ->
+          relationships: ->
             attendees: PersonPresenter
 
         EventPresenter.render(event)
@@ -465,9 +537,42 @@
 
         <section data-markdown>
         <script type="text/template">
-          ## Works anywhere™
+          <div class="emoji">🎈</div>
+          ## Isomorphic JS
         </script>
         </section>
+
+        <section data-state="slide-qa"data-background="/images/bikeshed/powerplant-control-dark.jpg">
+            <h1 class="slide-qa-heading">Questions?</h1>
+        </section>
+
+        <section data-markdown data-state="has-dark-background" data-background="/images/confetti-bg.jpg">
+        <script type="text/template">
+          # Summary
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">💾</div>
+          ## Future proof strategy™
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">👫</div>
+          ## End pointless discussions
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🎉</div>
+          ## Try out YAYSON
+        </script>
+        </section>
+
         <section data-markdown>
 					<script type="text/template">
             ## Useful links
@@ -482,10 +587,7 @@
           </script>
         </section>
 
-        <section data-markdown>
-					<script type="text/template">
-            # Thank you!
-          </script>
+        <section data-background="/images/thanks.gif">
         </section>
 
 			</div>
@@ -500,6 +602,8 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+        width: 1200,
+        height: 800,
 				controls: true,
 				progress: true,
 				history: true,

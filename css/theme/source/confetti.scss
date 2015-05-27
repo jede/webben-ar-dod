@@ -12,7 +12,6 @@
 
 
 // Include theme-specific fonts
-@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900);
 
 
@@ -32,29 +31,30 @@ $headingFontWeight: 900;
 $linkColor: #5304B2;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
-$headingMargin: 0 0 1.4em 0;
+$headingMargin: 0 0 1.2em 0;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  font-kerning: normal;
-}
 
 
-section.has-dark-background {
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+.has-dark-background .reveal section {
 	&, h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 	}
+  a {
+    color: $backgroundColor;
+  }
 }
-
 
 .slide-confetti .slides:after {
   content: ' ';
@@ -70,17 +70,57 @@ section.has-dark-background {
   background-position: top center;
 }
 
+.reveal {
 
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-kerning: normal;
+    transition: color .2s;
+  }
+
+  .slide-qa-heading {
+    color: white;
+    margin-top: -3%;
+  }
+
+  .slide-nordicjs-logo {
+    font-weight: 700;
+    text-transform: none;
+    color: white;
+    letter-spacing: -0.02em;
+    font-size: 4.5em;
+    margin-bottom: 0;
+  }
+
+  .emoji {
+    font-size: 110px;
+  }
+  .heading-mono {
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
 
 
-.reveal section img {
-  border: none;
-  box-shadow: none;
-}
 
-.reveal pre code {
-  color: hsl(0, 0%, 96%);
+  section img {
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  pre code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.1em;
+    line-height: 1.2;
+    padding: 20px;
+
+    color: hsl(0, 0%, 96%);
+    background: hsl(0, 0%, 20%);
+
+  }
 }
