@@ -65,9 +65,7 @@
             <a href="http://edelst.am">Johannes Edelstam</a> / <a href="http://twitter.com/jede">@jede</a>
           </p>
           <aside class="notes">
-            Great to be speaking amongst all you awesome speakers.
-
-            Its really amazing how this community has been growing!
+            good discussions during this conference. hounored!
           </aside>
         </section>
 
@@ -433,16 +431,19 @@ Accept: application/vnd.api+json
         <script type="text/template">
           ```json
           PATCH /photos
-          Content-Type: application/json-patch+json
-          Accept: application/json
+          Content-Type: application/vnd.api+json; ext=jsonpatch
+          Accept: application/vnd.api+json; ext=jsonpatch
 
 [
   {
     "op": "add",
     "path": "/-",
     "value": {
-      "title": "Earth",
-      "src": "http://example.com/images/earth-from-itakeunconf2016.jpeg"
+      "type": "photos",
+      "attributes": {
+        "title": "Earth",
+        "src": "http://example.com/images/earth-from-itakeunconf2016.jpeg"
+      }
     }
   }
 ]
@@ -455,7 +456,8 @@ Accept: application/vnd.api+json
         <script type="text/template">
           ```json
           PATCH /photos/1
-          Content-Type: application/json-patch+json
+          Content-Type: application/vnd.api+json; ext=jsonpatch
+          Accept: application/vnd.api+json; ext=jsonpatch
 
 [
   {
@@ -622,6 +624,10 @@ Accept: application/vnd.api+json
 				]
 			});
 
+      document.addEventListener('keydown', function(e){
+        if(e.which == 40 && e.shiftKey) { Reveal.next(); }
+        if(e.which == 38 && e.shiftKey) { Reveal.prev(); }
+      });
 		</script>
 
 	</body>
