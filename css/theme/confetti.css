@@ -294,6 +294,11 @@ body {
   letter-spacing: -0.02em;
   font-size: 4.5em;
   margin-bottom: 0; }
+.reveal .slide-feedback-title {
+  text-transform: none;
+  font-weight: 600; }
+  .reveal .slide-feedback-title a {
+    color: #282625; }
 .reveal .emoji {
   font-size: 110px; }
 .reveal .heading-mono {

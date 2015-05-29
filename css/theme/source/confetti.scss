@@ -96,6 +96,14 @@ $heading4Size: 1.0em;
     margin-bottom: 0;
   }
 
+  .slide-feedback-title {
+    text-transform: none;
+    font-weight: 600;
+    a {
+      color: $headingColor;
+    }
+  }
+
   .emoji {
     font-size: 110px;
   }
