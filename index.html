@@ -129,7 +129,7 @@
             ```json
             {
               "id": 1,
-              "title": "Frontend Meetup Budapest #607 at the ISS space station!"
+              "title": "WebCamp Zagreb 2036 at the ISS space station!"
             }
             ```
           </script>
@@ -153,7 +153,7 @@
             ```json
             {
               "id": 1,
-              "title": "Frontend Meetup Budapest #607 at the ISS space station!",
+              "title": "WebCamp Zagreb 2036 at the ISS space station!",
               "attendees": [{
                 "id": 5,
                 "name": "Christer Fuglesang"
@@ -169,7 +169,7 @@
             ```json
             {
               "id": 1,
-              "title": "Frontend Meetup Budapest #607 at the ISS space station!",
+              "title": "WebCamp Zagreb 2036 at the ISS space station!",
               "attendees": [{
                 "id": 1,
                 "name": "Christer Fuglesang",
@@ -200,7 +200,7 @@
                 "type": "events",
                 "id": "1",
                 "attributes": {
-                  "title": "Frontend Meetup Budapest #607 at the ISS space station!"
+                  "title": "WebCamp Zagreb 2036 at the ISS space station!"
                 }
               }
             }
@@ -218,7 +218,7 @@
       "type": "events",
       "id": "1",
       "attributes": {
-        "title": "Frontend Meetup Budapest #607 at the ISS space station!"
+        "title": "WebCamp Zagreb 2036 at the ISS space station!"
       }
     },
 
@@ -238,7 +238,7 @@
                 "type": "events",
                 "id": "1",
                 "attributes": {
-                  "title": "Frontend Meetup Budapest #607 at the ISS space station!"
+                  "title": "WebCamp Zagreb 2036 at the ISS space station!"
                 },
                 "relationships": {
                   "attendees": {
@@ -263,7 +263,7 @@
               "data": {
               ...
               },
-              "included": {
+              "included": [{
                 "type": "people",
                 "id": "5",
                 "attributes": {
@@ -274,7 +274,7 @@
                     "data": {"type": "events", "id": "1"}
                   }
                 }
-              }
+              }]
             }
             ```
           </script>
@@ -376,16 +376,18 @@
 
         <section data-markdown>
         <script type="text/template">
-```json
+```http
 POST /events
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
+```
 
+```json
 {
   "data": {
     "type": "events",
     "attributes": {
-      "title": "Frontend Meetup Budapest #607 at the ISS space station!",
+      "title": "WebCamp Zagreb 2036 at the ISS space station!",
     }
   }
 }
@@ -396,20 +398,22 @@ Accept: application/vnd.api+json
 
         <section data-markdown>
         <script type="text/template">
-```json
-PATCH /articles/1
+```http
+PATCH /events/1
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
+```
 
+```json
 {
   "data": {
-    "type": "articles",
+    "type": "events",
     "id": "1",
     "attributes": {
-      "title": "Frontend Meetup Budapest #607 at Mars!"
+      "title": "WebCamp Zagreb 2036 at Mars!"
     },
     "relationships": {
-      "author": {
+      "attendees": {
         "data": { "type": "people", "id": "1" }
       }
     }
@@ -420,71 +424,6 @@ Accept: application/vnd.api+json
         </section>
 
 
-        <section data-markdown>
-        <script type="text/template">
-          <div class="emoji">📡</div>
-          ## JSON Patch format
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```json
-          PATCH /photos
-          Content-Type: application/vnd.api+json; ext=jsonpatch
-          Accept: application/vnd.api+json; ext=jsonpatch
-
-[
-  {
-    "op": "add",
-    "path": "/-",
-    "value": {
-      "type": "photos",
-      "attributes": {
-        "title": "Earth",
-        "src": "http://example.com/images/earth-from-frontend-meetup-607.jpeg"
-      }
-    }
-  }
-]
-          ```
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-          ```json
-          PATCH /photos/1
-          Content-Type: application/vnd.api+json; ext=jsonpatch
-          Accept: application/vnd.api+json; ext=jsonpatch
-
-[
-  {
-    "op": "replace",
-    "path": "/src",
-    "value": "http://example.com/get-real.jpeg"
-  }
-]
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <div class="emoji">🍬</div>
-          ## Much more
-
-          <aside class="notes">
-            <p>
-              Errors, Updating relations.
-            </p>
-            <p>
-              See what I mean? You can move faster!
-            </p>
-          </aside>
-        </script>
-        </section>
 
         <section data-background="images/why.gif">
         </section>
@@ -543,6 +482,232 @@ Accept: application/vnd.api+json
           ## Isomorphic JS
         </script>
         </section>
+
+
+
+
+        <section data-background="images/advanced.gif">
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">📡</div>
+          ## JSON Patch format
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          PATCH /photos
+          Content-Type: application/vnd.api+json; ext=jsonpatch
+          Accept: application/vnd.api+json; ext=jsonpatch
+          ```
+
+          ```json
+[
+  {
+    "op": "add",
+    "path": "/-",
+    "value": {
+      "type": "photos",
+      "attributes": {
+        "title": "Earth",
+        "src": "http://example.com/images/earth-from-webcampzg-2036.jpeg"
+      }
+    }
+  }
+]
+          ```
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          PATCH /photos/1
+          Content-Type: application/vnd.api+json; ext=jsonpatch
+          Accept: application/vnd.api+json; ext=jsonpatch
+          ```
+
+          ```json
+[
+  {
+    "op": "replace",
+    "path": "/src",
+    "value": "http://example.com/get-real.jpeg"
+  }
+]
+          ```
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🍴</div>
+          ## Sparse fieldsets
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events?fields[events]=title
+          ```
+          ```json
+          {
+            "data": [{
+              "type": "events",
+              "id": "1",
+              "attributes": {
+                "title": "WebCamp Zagreb 2036 at the ISS space station!",
+              }],
+              "relationships": {
+                "attendees": {
+                  "data": { "type": "people", "id": "1" }
+                }
+              }
+            }
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events?include=attendees&fields[events]=title&fields[people]=name
+          ```
+          ```json
+          {
+            "data": [{
+              "type": "events",
+              "id": "1",
+              "attributes": {
+                "title": "WebCamp Zagreb 2036 at the ISS space station!",
+              },
+              "relationships": {
+                "attendees": {
+                  "data": { "type": "people", "id": "1" }
+                }
+              }
+            }],
+            "included": [{
+              "type": "people",
+              "id": "5",
+              "attributes": {
+                "name": "Christer Fuglesang",
+              }
+            }]
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          # GraphQL
+
+          ```graphql
+          {
+            events {
+              title
+              attendees {
+                name
+              }
+            }
+          }
+          ```
+        </script>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🎁</div>
+          ## Responsive responses
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events
+          User-Agent: Chrome/46.0.2490.42
+          ```
+          ```json
+          {
+            "data": [
+              ...20 events...
+            ],
+            "included": [
+              ...
+            ]
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events
+          User-Agent: AppleWebKit/601.1.46
+          ```
+          ```json
+          {
+            "data": [
+              ...5 events...
+            ]
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">😱</div>
+          ## Errors
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          HTTP/1.1 422 Unprocessable Entity
+          Content-Type: application/vnd.api+json
+          ```
+          ```json
+          {
+            "errors": [
+              {
+                "status": "422",
+                "source": { "pointer": "/data/attributes/first-name" },
+                "title":  "Invalid Attribute",
+                "detail": "First name must contain at least three characters."
+              }
+            ]
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <div class="emoji">🍬</div>
+          ## Much more
+
+          <aside class="notes">
+            <p>
+              See what I mean? You can move faster!
+            </p>
+          </aside>
+        </script>
+        </section>
+
 
         <section data-state="slide-qa"data-background="images/bikeshed/powerplant-control-dark.jpg">
             <h1 class="slide-qa-heading">Questions?</h1>
