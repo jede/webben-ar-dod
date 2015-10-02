@@ -12,7 +12,7 @@
 
 
 // Include theme-specific fonts
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Sans+Pro:400,600,700,900,300,200);
 
 
 // Override theme settings (see ../template/settings.scss)
@@ -106,6 +106,10 @@ $heading4Size: 1.0em;
 
   .emoji {
     font-size: 110px;
+  }
+  .emoji-image {
+    max-width: 160px;
+    height: auto;
   }
   .heading-mono {
     font-family: 'Inconsolata', monospace;
