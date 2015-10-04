@@ -83,6 +83,9 @@
         </section>
 
         <section data-background="images/bikeshed/parkinsons-law3.jpg">
+          <aside class="notes">
+            Parkinson's law of triviality
+          </aside>
         </section>
 
         <section data-state="slide-confetti" data-background="images/confetti.jpg">
@@ -306,7 +309,7 @@
 }
 ```
 <aside class="notes">
-  Computers read the documentation. Singularity.
+  Computers read the documentation. Singularity. No need for API versioning!
 </aside>
         </script>
         </section>
@@ -651,6 +654,7 @@ Accept: application/vnd.api+json
         </script>
         </section>
 
+        <section>
         <section data-markdown>
         <script type="text/template">
           ```http
@@ -669,11 +673,42 @@ Accept: application/vnd.api+json
 
         <section data-markdown>
         <script type="text/template">
+```http
+GET /events
+User-Agent: AppleWebKit/601.1.46
+```
+
+```json
+{
+  "data": [
+    {
+    ...
+      "relationships": {
+        "attendees": {
+          "links": {
+            "self": "http://confetti.events/events/1/relationships/attendees",
+            "related": "http://confetti.events/events/1/attendees"
+          }
+        }
+      }
+    }
+    ...4 more events...
+  ]
+}
+```
+
+        </script>
+        </section>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
           <img src="images/emoji/1202.png" class="emoji-image">
           ## Errors
         </script>
         </section>
 
+        <section>
         <section data-markdown>
         <script type="text/template">
           ```http
@@ -693,6 +728,36 @@ Accept: application/vnd.api+json
           }
           ```
         </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          HTTP/1.1 400 Bad Request
+          Content-Type: application/vnd.api+json
+          ```
+          ```json
+          {
+            "errors": [
+              {
+                "status": "422",
+                "code": "321",
+                "source": { "pointer": "/data/attributes/first-name" },
+                "title":  "Invalid Attribute",
+                "detail": "First name must contain at least three characters."
+              },
+              {
+                "status": "422",
+                "code": "123"
+                "source": { "pointer": "/data/attributes/first-name" },
+                "title":  "To common",
+                "detail": "First name must be more unique."
+              }
+            ]
+          }
+          ```
+        </script>
+        </section>
         </section>
 
         <section data-markdown>
@@ -749,6 +814,8 @@ Accept: application/vnd.api+json
             [github.com/confetti/yayson](https://github.com/confetti/yayson)
 
             [github.com/emberjs/data](https://github.com/emberjs/data)
+
+            [github.com/PuppetJs/PuppetJs](https://github.com/PuppetJs/PuppetJs)
 
             [github.com/orbitjs/orbit.js](https://github.com/orbitjs/orbit.js)
           </script>
