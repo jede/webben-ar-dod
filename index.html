@@ -442,6 +442,9 @@ Accept: application/vnd.api+json
         <script type="text/template">
           `$ npm install yayson`
         </script>
+        <aside class="notes">
+          Client and server
+        </aside>
         </section>
 
 
@@ -482,18 +485,161 @@ Accept: application/vnd.api+json
         </script>
         </section>
 
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/517.png" class="emoji-image">
-          ## Isomorphic JS
-        </script>
-        </section>
-
-
 
 
         <section data-background="images/advanced.gif">
         </section>
+
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <img src="images/emoji/505.png" class="emoji-image">
+          ## Responsive responses
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events
+          User-Agent: Chrome/46.0.2490.42
+          ```
+          ```json
+          {
+            "data": [
+              ...20 events...
+            ],
+            "included": [
+              ...
+            ]
+          }
+          ```
+        </script>
+        </section>
+
+        <section>
+        <section data-markdown>
+        <script type="text/template">
+          ```http
+          GET /events
+          User-Agent: AppleWebKit/601.1.46
+          ```
+          ```json
+          {
+            "data": [
+              ...5 events...
+            ]
+          }
+          ```
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```http
+GET /events
+User-Agent: AppleWebKit/601.1.46
+```
+
+```json
+{
+  "data": [
+    {
+    ...
+      "relationships": {
+        "attendees": {
+          "links": {
+            "self": "http://confetti.events/events/1/relationships/attendees",
+            "related": "http://confetti.events/events/1/attendees"
+          }
+        }
+      }
+    }
+    ...4 more events...
+  ]
+}
+```
+
+        </script>
+        </section>
+        </section>
+
+
+        <section data-markdown>
+        <script type="text/template">
+          <img src="images/emoji/487.png" class="emoji-image">
+          ## Much more
+
+          <aside class="notes">
+            <p>
+              See what I mean? You can move faster!
+            </p>
+          </aside>
+        </script>
+        </section>
+
+
+        <section data-background="hsl(0,0%,20%)">
+          <img src="images/jsonapi-implementations.png">
+        </section>
+
+        <section data-state="slide-qa"data-background="images/bikeshed/powerplant-control-dark.jpg">
+            <h1 class="slide-qa-heading">Questions?</h1>
+        </section>
+
+        <section data-markdown data-state="has-dark-background" data-background="images/confetti-bg.jpg">
+        <script type="text/template">
+          # Summary
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <img src="images/emoji/994.png" class="emoji-image">
+          ## Future proof strategy™
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <img src="images/emoji/817.png" class="emoji-image">
+          ## End pointless discussions
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          <img src="images/emoji/518.png" class="emoji-image">
+          ## Try out YAYSON
+        </script>
+        </section>
+
+
+        <section data-markdown>
+					<script type="text/template">
+            ## Useful links
+
+            [jsonapi.org](http://jsonapi.org)
+
+            [github.com/confetti/yayson](https://github.com/confetti/yayson)
+
+            [github.com/emberjs/data](https://github.com/emberjs/data)
+
+            [github.com/PuppetJs/PuppetJs](https://github.com/PuppetJs/PuppetJs)
+
+            [github.com/orbitjs/orbit.js](https://github.com/orbitjs/orbit.js)
+          </script>
+        </section>
+
+        <section>
+          <h1 class="slide-feedback-title"><a href="http://edelst.am/the-api-of-the-api/#/">edelst.am/the-api-of-the-api</a></h1>
+        </section>
+
+        <section data-background="images/thanks.gif">
+        </section>
+
+
 
 
         <section data-markdown>
@@ -630,80 +776,6 @@ Accept: application/vnd.api+json
         </script>
         </section>
 
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/505.png" class="emoji-image">
-          ## Responsive responses
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          GET /events
-          User-Agent: Chrome/46.0.2490.42
-          ```
-          ```json
-          {
-            "data": [
-              ...20 events...
-            ],
-            "included": [
-              ...
-            ]
-          }
-          ```
-        </script>
-        </section>
-
-        <section>
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          GET /events
-          User-Agent: AppleWebKit/601.1.46
-          ```
-          ```json
-          {
-            "data": [
-              ...5 events...
-            ]
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```http
-GET /events
-User-Agent: AppleWebKit/601.1.46
-```
-
-```json
-{
-  "data": [
-    {
-    ...
-      "relationships": {
-        "attendees": {
-          "links": {
-            "self": "http://confetti.events/events/1/relationships/attendees",
-            "related": "http://confetti.events/events/1/attendees"
-          }
-        }
-      }
-    }
-    ...4 more events...
-  ]
-}
-```
-
-        </script>
-        </section>
-        </section>
-
         <section data-markdown>
         <script type="text/template">
           <img src="images/emoji/1202.png" class="emoji-image">
@@ -761,79 +833,6 @@ User-Agent: AppleWebKit/601.1.46
           ```
         </script>
         </section>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/487.png" class="emoji-image">
-          ## Much more
-
-          <aside class="notes">
-            <p>
-              See what I mean? You can move faster!
-            </p>
-          </aside>
-        </script>
-        </section>
-
-
-        <section data-background="hsl(0,0%,20%)">
-          <img src="images/jsonapi-implementations.png">
-        </section>
-
-        <section data-state="slide-qa"data-background="images/bikeshed/powerplant-control-dark.jpg">
-            <h1 class="slide-qa-heading">Questions?</h1>
-        </section>
-
-        <section data-markdown data-state="has-dark-background" data-background="images/confetti-bg.jpg">
-        <script type="text/template">
-          # Summary
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/994.png" class="emoji-image">
-          ## Future proof strategy™
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/817.png" class="emoji-image">
-          ## End pointless discussions
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/518.png" class="emoji-image">
-          ## Try out YAYSON
-        </script>
-        </section>
-
-
-        <section data-markdown>
-					<script type="text/template">
-            ## Useful links
-
-            [jsonapi.org](http://jsonapi.org)
-
-            [github.com/confetti/yayson](https://github.com/confetti/yayson)
-
-            [github.com/emberjs/data](https://github.com/emberjs/data)
-
-            [github.com/PuppetJs/PuppetJs](https://github.com/PuppetJs/PuppetJs)
-
-            [github.com/orbitjs/orbit.js](https://github.com/orbitjs/orbit.js)
-          </script>
-        </section>
-
-        <section>
-          <h1 class="slide-feedback-title"><a href="http://edelst.am/the-api-of-the-api/#/">edelst.am/the-api-of-the-api</a></h1>
-        </section>
-
-        <section data-background="images/thanks.gif">
         </section>
 
 			</div>
