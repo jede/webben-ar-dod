@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>The API of the API | Johannes Edelstam</title>
 
@@ -52,12 +52,8 @@
       }
     </style>
 	</head>
-
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <section data-background="images/intro-bg.jpg" data-state="has-dark-background">
           <h1>The API<br>of<br>The API</h1>
@@ -836,27 +832,21 @@ User-Agent: AppleWebKit/601.1.46
         </section>
 
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
         width: 1200,
         height: 800,
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -872,6 +862,5 @@ User-Agent: AppleWebKit/601.1.46
         if(e.which == 38 && e.shiftKey) { Reveal.prev(); }
       });
 		</script>
-
 	</body>
 </html>
