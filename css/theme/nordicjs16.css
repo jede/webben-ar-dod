@@ -3,13 +3,13 @@
  *
  * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Sans+Pro:400,600,700,900,300,200);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Sans+Pro:200,300,400,600,700,900);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #FFFC39;
-  background-color: #FFFC39; }
+  background: #F5F5F5;
+  background-color: #F5F5F5; }
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -19,7 +19,7 @@ body {
 
 ::selection {
   color: #fff;
-  background: #923bfb;
+  background: #7b7bf8;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -39,18 +39,18 @@ body {
   margin: 0 0 1.2em 0;
   color: #282625;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-weight: 900;
+  font-weight: 200;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 3.5em; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 2em; }
 
 .reveal h3 {
   font-size: 1.3em; }
@@ -202,20 +202,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #5304B2;
+  color: #0C0CE8;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #7609f9;
+  color: #4b4bf6;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #300267; }
+  background: #08089f; }
 
 /*********************************************
  * IMAGES
@@ -237,7 +237,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #5304B2;
+  border-color: #0C0CE8;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -245,31 +245,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #5304B2; }
+  border-right-color: #0C0CE8; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #5304B2; }
+  border-left-color: #0C0CE8; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #5304B2; }
+  border-bottom-color: #0C0CE8; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #5304B2; }
+  border-top-color: #0C0CE8; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #7609f9; }
+  border-right-color: #4b4bf6; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #7609f9; }
+  border-left-color: #4b4bf6; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #7609f9; }
+  border-bottom-color: #4b4bf6; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #7609f9; }
+  border-top-color: #4b4bf6; }
 
 /*********************************************
  * PROGRESS BAR
@@ -278,7 +278,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #5304B2;
+  background: #0C0CE8;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -287,7 +287,7 @@ body {
   color: #fff; }
 
 .has-dark-background .reveal section a {
-  color: #FFFC39; }
+  color: #F5F5F5; }
 
 .slide-confetti .slides:after {
   content: ' ';
@@ -318,7 +318,7 @@ body {
 .reveal .slide-nordicjs-logo {
   font-weight: 700;
   text-transform: none;
-  color: white;
+  color: #0C0CE8;
   letter-spacing: -0.02em;
   font-size: 4.5em;
   margin-bottom: 0; }
