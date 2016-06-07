@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>The API of the API | Johannes Edelstam</title>
 
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/confetti.css" id="theme">
+		<link rel="stylesheet" href="css/theme/nordicjs16.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/monokai-sublime.css">
@@ -52,811 +52,324 @@
       }
     </style>
 	</head>
-
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-        <section data-background="images/intro-bg.jpg" data-state="has-dark-background">
-          <h1>The API<br>of<br>The API</h1>
+
+        <section>
+          <h1>Your perfect<br>JavaScript<br>framework</h1>
           <p style="margin-top: 90px">
             <a href="http://edelst.am">Johannes Edelstam</a> / <a href="http://twitter.com/jede">@jede</a>
           </p>
           <aside class="notes">
-            good discussions during this conference. hounored!
           </aside>
         </section>
 
-        <section data-background="images/bikeshed/powerplant4b.jpg">
-          <aside class="notes">
-            Cyril Northcote Parkinson 1957
-          </aside>
+        <section data-background="#EDECEC">
+          <img src="images/perfectjs/trends.png">
         </section>
 
-        <section data-background="images/bikeshed/powerplant-complicated.gif">
+        <section data-markdown>
+					<script type="text/template">
+            # Tack!
+            ### Användbara länkar:
+
+            [http://trends.google.com](http://trends.google.com)
+          </script>
         </section>
 
-        <section data-background="white">
-          <img src="images/bikeshed/bikeshed1.jpg">
+        <section>
+          <img data-src="images/perfectjs/joke2.gif" class="stretch">
         </section>
 
-        <section data-background="images/bikeshed/parkinsons-law3.jpg">
-          <aside class="notes">
-            Parkinson's law of triviality
-          </aside>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Agenda + Mål
+          </script>
         </section>
 
         <section data-state="slide-confetti" data-background="images/confetti.jpg">
         </section>
 
-        <section data-markdown data-background="images/map.jpg" data-state="has-dark-background">
-        <script type="text/template">
-          # Agenda
 
-          <aside class="notes">
-            30 mins now and hopefully we’ll have time for some questions at the end.
-
-            End pointless discussions, Future proof, how to make it happen
-          </aside>
-        </script>
-      </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/1096.png" class="emoji-image">
-          ## JSON API
-
-          <aside class="notes">
-            So how many of you have built a JSON API?
-          </aside>
-        </script>
+        <section data-background="#F52C47">
+          <img data-src="images/perfectjs/sthlmjs.png" class="stretch">
         </section>
 
-        <section>
-          <img src="images/ibm.png">
-        </section>
-
-        <section>
-          <img src="images/jsonapi2.png">
-        </section>
-
-        <section>
-          <img src="images/rest.svg">
-          <aside class="notes">
-            Representational state transfer
-          </aside>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /events/1</h3>
-            ```json
-            {
-              "id": 1,
-              "title": "Jfokus 2036 at the ISS space station!"
-            }
-            ```
-          </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /events/1/attendees</h3>
-            ```json
-            [{
-              "id": 1,
-              "name": "Christer Fuglesang"
-            }]
-            ```
-          </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /events/1</h3>
-            ```json
-            {
-              "id": 1,
-              "title": "Jfokus 2036 at the ISS space station!",
-              "attendees": [{
-                "id": 5,
-                "name": "Christer Fuglesang"
-              }]
-            }
-            ```
-          </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /event/1</h3>
-            ```json
-            {
-              "id": 1,
-              "title": "Jfokus 2036 at the ISS space station!",
-              "attendees": [{
-                "id": 1,
-                "name": "Christer Fuglesang",
-                "events": [{
-            ```
-            ![](images/explosion.gif)
-            ```json
-                }]
-              }]
-            }
-            ```
-          </script>
-        </section>
-
-        <section data-background="white">
-          <img src="images/jsonapi.svg" style="width: 100%;">
-          <aside  class="notes">
-            Avoid bikeshedding. 1.0 released yesterday!!
-          </aside>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /event/1</h3>
-            ```json
-            {
-              "data": {
-                "type": "events",
-                "id": "1",
-                "attributes": {
-                  "title": "Jfokus 2036 at the ISS space station!"
-                }
-              }
-            }
-            ```
-          </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            <h3 class="heading-mono">GET /events</h3>
-```json
-{
-  "data": [
-    {
-      "type": "events",
-      "id": "1",
-      "attributes": {
-        "title": "Jfokus 2036 at the ISS space station!"
-      }
-    },
-
-    ...
-
-  ]
-}
-```
-          </script>
-        </section>
-        <section>
-          <section data-markdown>
-					<script type="text/template">
-            ```json
-            {
-              "data": {
-                "type": "events",
-                "id": "1",
-                "attributes": {
-                  "title": "Jfokus 2036 at the ISS space station!"
-                },
-                "relationships": {
-                  "attendees": {
-                    "data": [
-                      {"type": "people", "id": "5"}
-                    ]
-                  }
-                }
-              },
-              ...
-            }
-            ```
-          </script>
-
-          </section>
-        </section>
-        <section>
-          <section data-markdown>
-					<script type="text/template">
-            ```json
-            {
-              "data": {
-              ...
-              },
-              "included": [{
-                "type": "people",
-                "id": "5",
-                "attributes": {
-                  "name": "Christer Fuglesang",
-                },
-                "relationships": {
-                  "event": {
-                    "data": {"type": "events", "id": "1"}
-                  }
-                }
-              }]
-            }
-            ```
-          </script>
-
-          </section>
-          <section data-background="images/woow.gif">
-          </section>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```json
-{
-  "data": {
-    ...
-    "relationships": {
-      "attendees": {
-        "links": {
-          "related": "http://confetti.events/events/1/attendees"
-        },
-        "data" : [
-          {"type": "people", "id": "5"},
-          {"type": "people", "id": "6"}
-        ]
-      }
-    }
-    ...
-  }
-}
-```
-<aside class="notes">
-  Computers read the documentation. Singularity. No need for API versioning!
-</aside>
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```json
-{
-  "data": {
-    ...
-    "relationships": {
-      "attendees": {
-        "links": {
-          "self": "http://confetti.events/events/1/relationships/attendees",
-          "related": "http://confetti.events/events/1/attendees"
-        },
-        "meta": {
-          "count": 10000
-        }
-      }
-    }
-    ...
-  }
-}
-```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/1022.png" class="emoji-image">
-          ## Pagination
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-```json
-{
-  "links": {
-    "self": "http://confetti.events/events",
-    "first": "http://confetti.events/events?page=1",
-    "next": "http://confetti.events/events?page=2",
-    "prev": null,
-    "last": "http://confetti.events/events?page=500"
-  },
-  "meta": {
-    "count": 10000,
-    "perPage": 20,
-    "currentPage": 1
-  },
-  "data": ... ,
-  "included": ...
-}
-```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/648.png" class="emoji-image">
-          ## CRUD
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-```http
-POST /events
-Content-Type: application/vnd.api+json
-Accept: application/vnd.api+json
-```
-
-```json
-{
-  "data": {
-    "type": "events",
-    "attributes": {
-      "title": "Jfokus 2036 at the ISS space station!",
-    }
-  }
-}
-```
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-```http
-PATCH /events/1
-Content-Type: application/vnd.api+json
-Accept: application/vnd.api+json
-```
-
-```json
-{
-  "data": {
-    "type": "events",
-    "id": "1",
-    "attributes": {
-      "title": "Jfokus 2036 at Mars!"
-    },
-    "relationships": {
-      "attendees": {
-        "data": { "type": "people", "id": "1" }
-      }
-    }
-  }
-}
-```
-        </script>
-        </section>
-
-
-
-        <section data-background="images/why.gif">
-        </section>
-
-        <section data-background="images/nordicjs.jpg">
+        <section data-background="images/perfectjs/nordicjs-bg.png">
           <h1 class="slide-nordicjs-logo">Nordic.js</h1>
         </section>
 
+        <section data-background="white">
+          <img data-src="images/perfectjs/star.png" width="50%">
+        </section>
+        <section data-background="white">
+          <img data-src="images/perfectjs/starstats.png" class="stretch">
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Tack!
+            ### Användbara länkar:
+
+            [http://trends.google.com](http://trends.google.com)
+
+            [https://github.com/trending/javascript](https://github.com/trending/javascript)
+
+            [http://www.timqian.com/star-history/](https://github.com/trending/javascript)
+          </script>
+        </section>
+
+        <section>
+          <img data-src="images/perfectjs/joke3.gif" class="stretch">
+        </section>
+
+
+        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
+					<script type="text/template">
+            # Struktur
+          </script>
+        </section>
+
+        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
+					<script type="text/template">
+            # Konventioner
+          </script>
+        </section>
+
+        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
+					<script type="text/template">
+            # Säkerhet
+          </script>
+        </section>
+
+        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
+					<script type="text/template">
+            # Återanvändbarhet
+          </script>
+        </section>
+
+
+        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
+					<script type="text/template">
+            # Egen struktur
+          </script>
+        </section>
+
+        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
+					<script type="text/template">
+            # Egna konventioner
+          </script>
+        </section>
+
+        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
+					<script type="text/template">
+            # Bibliotek
+          </script>
+        </section>
+
+
+        <section>
+          <img data-src="images/perfectjs/backbone.png">
+        </section>
+
+        <section>
+          <img data-src="images/perfectjs/angular.png" width="70%">
+        </section>
+
+        <section>
+          <img data-src="images/perfectjs/ember.png" width="70%">
+        </section>
+
+        <section>
+          <img data-src="images/perfectjs/meteor.png">
+        </section>
+
+        <section>
+          <img data-src="images/perfectjs/react.svg" width="70%">
+        </section>
+
         <section data-markdown>
         <script type="text/template">
-          `$ npm install yayson`
+```javascript
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('content')
+);
+```
         </script>
-        <aside class="notes">
-          Client and server
-        </aside>
+        </section>
+
+        <section data-background="#4F4E50">
+          <img data-src="images/perfectjs/flux.png" class="stretch">
+        </section>
+
+        <section data-background="white">
+          <img data-src="images/perfectjs/polymer-project.png" width="70%">
         </section>
 
 
+        <section>
+          <img data-src="images/perfectjs/webcomponents.svg" width="40%">
+          <h1>Web Components</h1>
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Custom Elements
+          </script>
+        </section>
+
         <section data-markdown>
         <script type="text/template">
-        ```coffeescript
-        yayson = require('yayson')()
-        Store = yayson.Store
-        store = new Store()
+```javascript
+class SaveBtn extends HTMLElement {
 
-        service.get '/events/' + id, (data) ->
-          # Store whatever we got
-          event = store.sync(data)
+   constructor() {
+      super();
+   }
 
-          # Now our event should be here
-          event = store.find('events', id)
+ // Define the required of the 4 available callbacks
+ // Define getters and setters
+}
 
-          event.attendees[0].name # => Christer Fuglesang
-        ```
+document.registerElement("save-button", SaveBtn);
+```
+```html
+<save-button></save-button>
+```
+        </script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            # HTML Templates
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<template id="product">
+  <div>
+    <span class="name"></span>
+  </div>
+</template>
+```
+        </script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            # Shadow DOM
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<p id="hostElement"></p>
+```
+```javascript
+var shadow = document.querySelector('#hostElement').createShadowRoot();
+shadow.innerHTML = '<p>Here is some new text</p>';
+```
         </script>
         </section>
 
         <section data-markdown>
-        <script type="text/template">
-        ```coffee
-        yayson = require('yayson')()
-        Presenter = yayson.Presenter
-        PersonPresenter = require('./person-presenter')
-
-        class EventPresenter extends Presenter
-          type: 'events'
-
-          relationships: ->
-            attendees: PersonPresenter
-
-        EventPresenter.render(event)
-        ```
-        </script>
-        </section>
-
-
-
-        <section data-background="images/advanced.gif">
-        </section>
-
-
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/505.png" class="emoji-image">
-          ## Responsive responses
-        </script>
+					<script type="text/template">
+            # HTML Imports
+          </script>
         </section>
 
         <section data-markdown>
         <script type="text/template">
-          ```http
-          GET /events
-          User-Agent: Chrome/46.0.2490.42
-          ```
-          ```json
-          {
-            "data": [
-              ...20 events...
-            ],
-            "included": [
-              ...
-            ]
-          }
-          ```
+```html
+<head>
+  <link rel="import" href="bootstrap.html">
+</head>
+```
+        </script>
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Webpack
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```javascript
+// content.js
+module.exports = "Hello from content.js.";
+```
+```javascript
+// index.js
+document.write(require("./content.js")); // Prints: Hello from content.js
+```
         </script>
         </section>
 
         <section>
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          GET /events
-          User-Agent: AppleWebKit/601.1.46
-          ```
-          ```json
-          {
-            "data": [
-              ...5 events...
-            ]
-          }
-          ```
-        </script>
+          <img data-src="images/perfectjs/npm.png" width="70%">
         </section>
 
         <section data-markdown>
-        <script type="text/template">
-```http
-GET /events
-User-Agent: AppleWebKit/601.1.46
-```
-
-```json
-{
-  "data": [
-    {
-    ...
-      "relationships": {
-        "attendees": {
-          "links": {
-            "self": "http://confetti.events/events/1/relationships/attendees",
-            "related": "http://confetti.events/events/1/attendees"
-          }
-        }
-      }
-    }
-    ...4 more events...
-  ]
-}
-```
-
-        </script>
-        </section>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/487.png" class="emoji-image">
-          ## Much more
-
-          <aside class="notes">
-            <p>
-              See what I mean? You can move faster!
-            </p>
-          </aside>
-        </script>
-        </section>
-
-
-        <section data-background="hsl(0,0%,20%)">
-          <img src="images/jsonapi-implementations.png">
-        </section>
-
-        <section data-state="slide-qa"data-background="images/bikeshed/powerplant-control-dark.jpg">
-            <h1 class="slide-qa-heading">Questions?</h1>
-        </section>
-
-        <section data-markdown data-state="has-dark-background" data-background="images/confetti-bg.jpg">
-        <script type="text/template">
-          # Summary
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/994.png" class="emoji-image">
-          ## Future proof strategy™
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/817.png" class="emoji-image">
-          ## End pointless discussions
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/518.png" class="emoji-image">
-          ## Try out YAYSON
-        </script>
+					<script type="text/template">
+            # JQuery
+            http://youmightnotneedjquery.com/
+          </script>
         </section>
 
 
         <section data-markdown>
 					<script type="text/template">
-            ## Useful links
-
-            [jsonapi.org](http://jsonapi.org)
-
-            [github.com/confetti/yayson](https://github.com/confetti/yayson)
-
-            [github.com/emberjs/data](https://github.com/emberjs/data)
-
-            [github.com/PuppetJs/PuppetJs](https://github.com/PuppetJs/PuppetJs)
-
-            [github.com/orbitjs/orbit.js](https://github.com/orbitjs/orbit.js)
+            # Uppgradering
           </script>
         </section>
 
-        <section>
-          <h1 class="slide-feedback-title"><a href="http://edelst.am/api">edelst.am/api</a></h1>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Frågor?
+          </script>
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Summering
+          </script>
         </section>
 
         <section data-background="images/thanks.gif">
         </section>
 
-
-
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/1029.png" class="emoji-image">
-          ## JSON Patch format
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          PATCH /photos
-          Content-Type: application/vnd.api+json; ext=jsonpatch
-          Accept: application/vnd.api+json; ext=jsonpatch
-          ```
-
-          ```json
-[
-  {
-    "op": "add",
-    "path": "/-",
-    "value": {
-      "type": "photos",
-      "attributes": {
-        "title": "Earth",
-        "src": "http://example.com/images/earth-from-jfokus-2036.jpeg"
-      }
-    }
-  }
-]
-          ```
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          PATCH /photos/1
-          Content-Type: application/vnd.api+json; ext=jsonpatch
-          Accept: application/vnd.api+json; ext=jsonpatch
-          ```
-
-          ```json
-[
-  {
-    "op": "replace",
-    "path": "/src",
-    "value": "http://example.com/get-real.jpeg"
-  }
-]
-          ```
-        </script>
-        </section>
-
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/495.png" class="emoji-image">
-          ## Sparse fieldsets
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          GET /events?fields[events]=title
-          ```
-          ```json
-          {
-            "data": [{
-              "type": "events",
-              "id": "1",
-              "attributes": {
-                "title": "Jfokus 2036 at the ISS space station!",
-              }],
-              "relationships": {
-                "attendees": {
-                  "data": { "type": "people", "id": "1" }
-                }
-              }
-            }
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          GET /events?include=attendees&fields[events]=title&fields[people]=name
-          ```
-          ```json
-          {
-            "data": [{
-              "type": "events",
-              "id": "1",
-              "attributes": {
-                "title": "Jfokus 2036 at the ISS space station!",
-              },
-              "relationships": {
-                "attendees": {
-                  "data": { "type": "people", "id": "1" }
-                }
-              }
-            }],
-            "included": [{
-              "type": "people",
-              "id": "5",
-              "attributes": {
-                "name": "Christer Fuglesang",
-              }
-            }]
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          # GraphQL
-
-          ```graphql
-          {
-            events {
-              title
-              attendees {
-                name
-              }
-            }
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          <img src="images/emoji/1202.png" class="emoji-image">
-          ## Errors
-        </script>
-        </section>
-
-        <section>
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          HTTP/1.1 422 Unprocessable Entity
-          Content-Type: application/vnd.api+json
-          ```
-          ```json
-          {
-            "errors": [
-              {
-                "status": "422",
-                "source": { "pointer": "/data/attributes/first-name" },
-                "title":  "Invalid Attribute",
-                "detail": "First name must contain at least three characters."
-              }
-            ]
-          }
-          ```
-        </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-          ```http
-          HTTP/1.1 400 Bad Request
-          Content-Type: application/vnd.api+json
-          ```
-          ```json
-          {
-            "errors": [
-              {
-                "status": "422",
-                "code": "321",
-                "source": { "pointer": "/data/attributes/first-name" },
-                "title":  "Invalid Attribute",
-                "detail": "First name must contain at least three characters."
-              },
-              {
-                "status": "422",
-                "code": "123"
-                "source": { "pointer": "/data/attributes/first-name" },
-                "title":  "To common",
-                "detail": "First name must be more unique."
-              }
-            ]
-          }
-          ```
-        </script>
-        </section>
-        </section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
         width: 1200,
         height: 800,
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -872,6 +385,5 @@ User-Agent: AppleWebKit/601.1.46
         if(e.which == 38 && e.shiftKey) { Reveal.prev(); }
       });
 		</script>
-
 	</body>
 </html>

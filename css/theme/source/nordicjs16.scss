@@ -1,0 +1,138 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Sans+Pro:200,300,400,600,700,900);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #F5F5F5;
+
+$mainColor: hsl(30, 4%, 15%);
+$headingColor: hsl(30, 4%, 15%);
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -.03em;
+$headingTextTransform: none;
+$headingFontWeight: 200;
+$linkColor: #0C0CE8;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+$headingMargin: 0 0 1.2em 0;
+
+$heading1Size: 3.5em;
+$heading2Size: 2em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+.has-dark-background .reveal section {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+  a {
+    color: $backgroundColor;
+  }
+}
+
+.slide-confetti .slides:after {
+  content: ' ';
+  position: absolute;
+  width: 60%;
+  height: 30%;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../../images/confetti-logo-black.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.reveal {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-kerning: normal;
+    transition: color .2s;
+  }
+
+  .slide-qa-heading {
+    color: white;
+    margin-top: -3%;
+  }
+
+  .slide-nordicjs-logo {
+    font-weight: 700;
+    text-transform: none;
+    color: $linkColor;
+    letter-spacing: -0.02em;
+    font-size: 4.5em;
+    margin-bottom: 0;
+  }
+
+  .slide-feedback-title {
+    text-transform: none;
+    font-weight: 600;
+    a {
+      color: $headingColor;
+    }
+  }
+
+  .emoji {
+    font-size: 110px;
+  }
+  .emoji-image {
+    max-width: 160px;
+    height: auto;
+  }
+  .heading-mono {
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
+
+
+
+  section img {
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  pre code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.1em;
+    line-height: 1.2;
+    padding: 20px;
+
+    color: hsl(0, 0%, 96%);
+    background: hsl(0, 0%, 20%);
+
+  }
+}
