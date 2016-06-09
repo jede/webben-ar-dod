@@ -174,17 +174,66 @@
           <img data-src="images/perfectjs/backbone.png">
         </section>
 
+        <section data-markdown>
+        <script type="text/template">
+          ## Templates
+```javascript
+var compiled = _.template("hello: <%= name %>");
+compiled({name: 'moe'}); // => "hello: moe"
+```
+        </script>
+        </section>
+
+
         <section>
           <img data-src="images/perfectjs/angular.png" width="70%">
+        </section>
+        <section data-markdown>
+        <script type="text/template">
+          ## Components
+```typescript
+@Component({
+  selector: 'my-hero-detail',
+})
+export class HeroDetailComponent {
+}
+```
+
+```html
+<my-hero-detail></my-hero-detail>
+```
+        </script>
         </section>
 
         <section>
           <img data-src="images/perfectjs/ember.png" width="70%">
         </section>
 
-        <section>
-          <img data-src="images/perfectjs/meteor.png">
+
+        <section data-markdown>
+        <script type="text/template">
+          ## Two-way bindings
+          ```html
+<p>Hello {{name}}</p>
+<input value={{name}}>
+```
+        </script>
         </section>
+
+        <section data-markdown>
+        <script type="text/template">
+          ## Routing
+          ```javascript
+Router.map(function() {
+  this.route('about');
+  this.route('favorites', { path: '/favs' });
+});
+```
+        </script>
+        </section>
+
+
+
 
         <section>
           <img data-src="images/perfectjs/react.svg" width="70%">
@@ -214,6 +263,25 @@ ReactDOM.render(
           <img data-src="images/perfectjs/flux.png" class="stretch">
         </section>
 
+        <section>
+          <img data-src="images/perfectjs/meteor.png">
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```javascript
+Template.task.events({
+  'click .toggle-checked'() {
+    Tasks.update(this._id, {
+      $set: { checked: ! this.checked },
+    });
+  }
+});
+```
+        </script>
+        </section>
+
+
         <section data-background="white">
           <img data-src="images/perfectjs/polymer-project.png" width="70%">
         </section>
@@ -222,6 +290,42 @@ ReactDOM.render(
         <section>
           <img data-src="images/perfectjs/webcomponents.svg" width="40%">
           <h1>Web Components</h1>
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # HTML Templates
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<template id="product">
+  <div>
+    <span class="name"></span>
+  </div>
+</template>
+```
+        </script>
+        </section>
+
+        <section data-markdown>
+					<script type="text/template">
+            # Shadow DOM
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<p id="hostElement"></p>
+```
+```javascript
+var shadow = document.querySelector('#hostElement').createShadowRoot();
+shadow.innerHTML = '<p>Here is some new text</p>';
+```
+        </script>
         </section>
 
         <section data-markdown>
@@ -247,40 +351,6 @@ document.registerElement("save-button", SaveBtn);
 ```
 ```html
 <save-button></save-button>
-```
-        </script>
-        </section>
-        <section data-markdown>
-					<script type="text/template">
-            # HTML Templates
-          </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```html
-<template id="product">
-  <div>
-    <span class="name"></span>
-  </div>
-</template>
-```
-        </script>
-        </section>
-        <section data-markdown>
-					<script type="text/template">
-            # Shadow DOM
-          </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```html
-<p id="hostElement"></p>
-```
-```javascript
-var shadow = document.querySelector('#hostElement').createShadowRoot();
-shadow.innerHTML = '<p>Here is some new text</p>';
 ```
         </script>
         </section>
