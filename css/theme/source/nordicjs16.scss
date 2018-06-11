@@ -47,6 +47,13 @@ $heading4Size: 1.0em;
 // ---------------------------------------------
 
 
+.reveal img,
+.reveal video,
+.reveal iframe {
+	max-width: 90vw;
+	max-height: 90vh;
+}
+
 .has-dark-background .reveal section {
 	&, h1, h2, h3, h4, h5, h6 {
 		color: #fff;
