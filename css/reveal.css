@@ -176,48 +176,21 @@ body {
 /*********************************************
  * CONTROLS
  *********************************************/
-@-webkit-keyframes bounce-right {
-  0%, 10%, 25%, 40%, 50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
-  20% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px); }
-  30% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px); } }
 @keyframes bounce-right {
   0%, 10%, 25%, 40%, 50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
   20% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px); }
+    transform: translateX(10px); }
   30% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px); } }
-
-@-webkit-keyframes bounce-down {
-  0%, 10%, 25%, 40%, 50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  20% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px); }
-  30% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px); } }
+    transform: translateX(-5px); } }
 
 @keyframes bounce-down {
   0%, 10%, 25%, 40%, 50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
+    transform: translateY(0); }
   20% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px); }
+    transform: translateY(10px); }
   30% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px); } }
+    transform: translateY(-5px); } }
 
 .reveal .controls {
   display: none;
@@ -238,9 +211,7 @@ body {
     outline: 0;
     cursor: pointer;
     color: currentColor;
-    -webkit-transform: scale(0.9999);
-            transform: scale(0.9999);
-    transition: color 0.2s ease, opacity 0.2s ease, -webkit-transform 0.2s ease;
+    transform: scale(0.9999);
     transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
     z-index: 2;
     pointer-events: auto;
@@ -260,66 +231,50 @@ body {
     border-radius: 0.25em;
     background-color: currentColor;
     transition: all 0.15s ease, background-color 0.8s ease;
-    -webkit-transform-origin: 0.2em 50%;
-            transform-origin: 0.2em 50%;
+    transform-origin: 0.2em 50%;
     will-change: transform; }
   .reveal .controls .controls-arrow {
     position: relative;
     width: 3.6em;
     height: 3.6em; }
     .reveal .controls .controls-arrow:before {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(45deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(45deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(45deg); }
     .reveal .controls .controls-arrow:after {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(-45deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(-45deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(-45deg); }
     .reveal .controls .controls-arrow:hover:before {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(40deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(40deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(40deg); }
     .reveal .controls .controls-arrow:hover:after {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(-40deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(-40deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(-40deg); }
     .reveal .controls .controls-arrow:active:before {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(36deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(36deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(36deg); }
     .reveal .controls .controls-arrow:active:after {
-      -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(-36deg);
-              transform: translateX(0.5em) translateY(1.55em) rotate(-36deg); }
+      transform: translateX(0.5em) translateY(1.55em) rotate(-36deg); }
   .reveal .controls .navigate-left {
     right: 6.4em;
     bottom: 3.2em;
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px); }
+    transform: translateX(-10px); }
   .reveal .controls .navigate-right {
     right: 0;
     bottom: 3.2em;
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px); }
+    transform: translateX(10px); }
     .reveal .controls .navigate-right .controls-arrow {
-      -webkit-transform: rotate(180deg);
-              transform: rotate(180deg); }
+      transform: rotate(180deg); }
     .reveal .controls .navigate-right.highlight {
-      -webkit-animation: bounce-right 2s 50 both ease-out;
-              animation: bounce-right 2s 50 both ease-out; }
+      animation: bounce-right 2s 50 both ease-out; }
   .reveal .controls .navigate-up {
     right: 3.2em;
     bottom: 6.4em;
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px); }
+    transform: translateY(-10px); }
     .reveal .controls .navigate-up .controls-arrow {
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg); }
+      transform: rotate(90deg); }
   .reveal .controls .navigate-down {
     right: 3.2em;
     bottom: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px); }
+    transform: translateY(10px); }
     .reveal .controls .navigate-down .controls-arrow {
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg); }
+      transform: rotate(-90deg); }
     .reveal .controls .navigate-down.highlight {
-      -webkit-animation: bounce-down 2s 50 both ease-out;
-              animation: bounce-down 2s 50 both ease-out; }
+      animation: bounce-down 2s 50 both ease-out; }
   .reveal .controls[data-controls-back-arrows="faded"] .navigate-left.enabled,
   .reveal .controls[data-controls-back-arrows="faded"] .navigate-up.enabled {
     opacity: 0.3; }
@@ -334,8 +289,7 @@ body {
     visibility: visible;
     opacity: 0.9;
     cursor: pointer;
-    -webkit-transform: none;
-            transform: none; }
+    transform: none; }
   .reveal .controls .enabled.fragmented {
     opacity: 0.5; }
   .reveal .controls .enabled:hover,
@@ -366,13 +320,11 @@ body {
 
 .reveal.no-hover .controls .controls-arrow:hover:before,
 .reveal.no-hover .controls .controls-arrow:active:before {
-  -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(45deg);
-          transform: translateX(0.5em) translateY(1.55em) rotate(45deg); }
+  transform: translateX(0.5em) translateY(1.55em) rotate(45deg); }
 
 .reveal.no-hover .controls .controls-arrow:hover:after,
 .reveal.no-hover .controls .controls-arrow:active:after {
-  -webkit-transform: translateX(0.5em) translateY(1.55em) rotate(-45deg);
-          transform: translateX(0.5em) translateY(1.55em) rotate(-45deg); }
+  transform: translateX(0.5em) translateY(1.55em) rotate(-45deg); }
 
 @media screen and (min-width: 500px) {
   .reveal .controls[data-controls-layout="edges"] {
@@ -493,11 +445,7 @@ body {
   padding: 20px 0px;
   pointer-events: auto;
   z-index: 10;
-  -webkit-transform-style: flat;
-          transform-style: flat;
-  transition: -webkit-transform-origin 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), -webkit-transform 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), visibility 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), opacity 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transform-style: preserve-3d;
->>>>>>> 96b3d18... Theme
+  transform-style: flat;
   transition: transform-origin 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), transform 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), visibility 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), opacity 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 /* Global transition speed settings */
@@ -611,8 +559,7 @@ body {
  *********************************************/
 .reveal .slides section[data-transition=default].stack,
 .reveal.default .slides section.stack {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
+  transform-style: preserve-3d; }
 
 .reveal .slides > section[data-transition=default].past,
 .reveal .slides > section[data-transition~=default-out].past,
@@ -636,8 +583,7 @@ body {
 
 .reveal .slides section[data-transition=convex].stack,
 .reveal.convex .slides section.stack {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
+  transform-style: preserve-3d; }
 
 .reveal .slides > section[data-transition=convex].past,
 .reveal .slides > section[data-transition~=convex-out].past,
@@ -664,8 +610,7 @@ body {
  *********************************************/
 .reveal .slides section[data-transition=concave].stack,
 .reveal.concave .slides section.stack {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
+  transform-style: preserve-3d; }
 
 .reveal .slides > section[data-transition=concave].past,
 .reveal .slides > section[data-transition~=concave-out].past,
@@ -729,11 +674,9 @@ body {
 .reveal.cube .slides section {
   padding: 30px;
   min-height: 700px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   box-sizing: border-box;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
+  transform-style: preserve-3d; }
 
 .reveal.center.cube .slides section {
   min-height: 0; }
@@ -799,8 +742,7 @@ body {
   padding: 30px;
   min-height: 700px;
   box-sizing: border-box;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
+  transform-style: preserve-3d; }
 
 .reveal.page .slides section.past {
   z-index: 12; }
@@ -856,8 +798,7 @@ body {
 .reveal .slides section[data-transition=fade],
 .reveal.fade .slides section:not([data-transition]),
 .reveal.fade .slides > section > section:not([data-transition]) {
-  -webkit-transform: none;
-          transform: none;
+  transform: none;
   transition: opacity 0.5s; }
 
 .reveal.fade.overview .slides section,
@@ -869,8 +810,7 @@ body {
  *********************************************/
 .reveal .slides section[data-transition=none],
 .reveal.none .slides section:not([data-transition]) {
-  -webkit-transform: none;
-          transform: none;
+  transform: none;
   transition: none; }
 
 /*********************************************
@@ -1091,10 +1031,8 @@ body {
  * OVERVIEW
  *********************************************/
 .reveal.overview {
-  -webkit-perspective-origin: 50% 50%;
-          perspective-origin: 50% 50%;
-  -webkit-perspective: 700px;
-          perspective: 700px; }
+  perspective-origin: 50% 50%;
+  perspective: 700px; }
   .reveal.overview .slides {
     -moz-transform-style: preserve-3d; }
   .reveal.overview .slides section {
@@ -1122,8 +1060,7 @@ body {
     outline: none;
     overflow: visible; }
   .reveal.overview .backgrounds {
-    -webkit-perspective: inherit;
-            perspective: inherit;
+    perspective: inherit;
     -moz-transform-style: preserve-3d; }
   .reveal.overview .backgrounds .slide-background {
     opacity: 1;
@@ -1140,9 +1077,6 @@ body {
 .reveal.overview .backgrounds .slide-background,
 .reveal.overview-deactivating .backgrounds .slide-background {
   transition: none; }
-
-.reveal.overview-animated .slides {
-  transition: transform 0.4s ease; }
 
 /*********************************************
  * RTL SUPPORT
@@ -1361,12 +1295,9 @@ body {
   padding: 0 2px;
   pointer-events: none;
   transition: all 400ms ease;
-  -webkit-transform-origin: 50% 0%;
-          transform-origin: 50% 0%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden; }
 
 .reveal .roll:hover span {
   background: rgba(0, 0, 0, 0.5);
