@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Your perfect JavaScript framework | Johannes Edelstam</title>
+		<title>The API of the API | Johannes Edelstam</title>
 
-		<meta name="description" content="Your perfect JavaScript framework">
+		<meta name="description" content="The API of the API">
 		<meta name="author" content="Johannes Edelstam">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,50 +56,39 @@
 		<div class="reveal">
 			<div class="slides">
 
-        <section>
-          <h1>Your perfect<br>JavaScript<br>framework</h1>
-          <p style="margin-top: 90px">
+        <section data-background="images/webdod/cover.jpg" data-transition="fade-out">
+          <p style="
+            position: fixed;
+            bottom: 10px;
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);">
             <a href="http://edelst.am">Johannes Edelstam</a> / <a href="http://twitter.com/jede">@jede</a>
           </p>
           <aside class="notes">
-            Hej! Stort tack för att ni bjöd in mig. Så kul att vara här och prata!
           </aside>
         </section>
 
-        <section data-background="#EDECEC">
-          <img src="images/perfectjs/trends.png">
-          <aside class="notes">
-            Tydligt: Angular.js - självklart val
-          </aside>
+        <section data-background="white">
+          <img src="images/webdod/bash.png">
         </section>
 
-        <section data-markdown>
-					<script type="text/template">
-            # Tack!
-            ### Användbara länkar:
-
-            [http://trends.google.com](http://trends.google.com)
-          </script>
+        <section data-background="white">
+          <img src="images/webdod/wat.png">
         </section>
 
         <section>
-          <img data-src="images/perfectjs/joke2.gif" class="stretch">
-          <aside class="notes">
-            Ok, skämt, alla vet - Github stjärnor som gäller
-          </aside>
+          <img src="images/webdod/old.png">
+        </section>
+
+        <section data-background="white">
+          <img src="images/webdod/modules.png">
         </section>
 
 
-        <section data-markdown data-separator-notes="^Note:">
+        <section data-markdown>
 					<script type="text/template">
             # Agenda + Mål
-
-            Note:
-            * Varför ramverk?
-            * Ramverk därute
-            * Måste man?
-
-            Mål: Blixtsnabb bild - var är JS-världen på väg
           </script>
         </section>
 
@@ -114,242 +103,136 @@
         <section data-background="images/perfectjs/nordicjs-bg.png">
           <h1 class="slide-nordicjs-logo">Nordic.js</h1>
         </section>
-        <section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-            <img src="images/emoji/1045.png" class="emoji-image">
-
-            Note:
-            * 15 min - sen frågor
-            * Länk till slidesen i slutet
-            * Fota mig gärna och lägg ut på internet så jag måste tänka på min hållning
-          </script>
-        </section>
 
         <section data-background="white">
-          <img data-src="images/perfectjs/star.png" width="50%">
+          <img src="images/webdod/java.jpg">
         </section>
+
+
         <section data-background="white">
-          <img data-src="images/perfectjs/starstats.png" class="stretch">
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            # Tack!
-            ### Användbara länkar:
-
-            [http://trends.google.com](http://trends.google.com)
-
-            [https://github.com/trending/javascript](https://github.com/trending/javascript)
-
-            [http://www.timqian.com/star-history/](https://github.com/trending/javascript)
-          </script>
-        </section>
-
-        <section>
-          <img data-src="images/perfectjs/joke3.gif" class="stretch">
-        </section>
-
-
-        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
-					<script type="text/template">
-            # Struktur
-          </script>
-        </section>
-
-        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
-					<script type="text/template">
-            # Konventioner
-          </script>
-        </section>
-
-        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
-					<script type="text/template">
-            # Säkerhet
-          </script>
-        </section>
-
-        <section data-markdown data-background="images/perfectjs/structure2.jpg" data-state="has-dark-background">
-					<script type="text/template">
-            # Återanvändbarhet
-          </script>
-        </section>
-
-
-        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
-					<script type="text/template">
-            # Egen struktur
-          </script>
-        </section>
-
-        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
-					<script type="text/template">
-            # Egna konventioner
-          </script>
-        </section>
-
-        <section data-markdown data-background="images/perfectjs/nature.jpg"  data-state="has-dark-background">
-					<script type="text/template">
-            # Bibliotek
-          </script>
-        </section>
-
-
-        <section>
-          <img data-src="images/perfectjs/backbone.png">
+          <img src="images/webdod/typescript.svg">
         </section>
 
         <section data-markdown>
         <script type="text/template">
-          ## Templates
-```javascript
-var compiled = _.template("hello: <%= name %>");
-compiled({name: 'moe'}); // => "hello: moe"
-```
-        </script>
-        </section>
-
-
-        <section>
-          <img data-src="images/perfectjs/angular.png" width="70%">
-        </section>
-        <section data-markdown>
-        <script type="text/template">
-          ## Components
 ```typescript
-@Component({
-  selector: 'my-hero-detail',
-})
-export class HeroDetailComponent {
+import * as React from "react";
+import { GameState } from "./constants";
+
+interface GameStateBarState {
+    gameState: GameState;    
 }
-```
 
-```html
-<my-hero-detail></my-hero-detail>
+export class GameStateBar extends React.Component<{}, GameStateBarState> {
+    
+    constructor(props: {}) {
+        super(props);
+        this.state = {gameState: ""};
+    }
+    
+    private handleGameStateChange(e: CustomEvent) {
+        this.setState({gameState: e.detail});
+    }
 ```
         </script>
         </section>
 
-        <section>
-          <img data-src="images/perfectjs/ember.png" width="70%">
+
+
+        <section data-background="#60B5CC">
+          <img src="images/webdod/elm.png">
         </section>
 
+        <section data-background="white">
+          <img src="images/webdod/coffeescript.svg">
+        </section>
 
-        <section data-markdown>
+        <section data-background="#2d343a">
+          <img src="images/webdod/flow.svg" width="50%">
+        </section>
+
+        <section data-background="white">
+          <img src="images/webdod/reason.svg" width="50%">
+        </section>
+
+        <section data-background="#f5da55">
+          <img src="images/webdod/babel.svg" width="50%">
+        </section>
+
+        <section data-background="#ebecef">
+          <img src="images/webdod/webassembly.svg" width="50%">
+        </section>
+
+        <section data-background="#ebecef">
+          <img src="images/webdod/wasmship.png">
+        </section>
+
+        <section data-background="#ebecef"  data-markdown>
         <script type="text/template">
-          ## Two-way bindings
-          ```html
-<p>Hello {{name}}</p>
-<input value={{name}}>
+```javascript
+WebAssembly.instantiateStreaming(fetch('fail.wasm'))
+  .then(obj => obj.instance.exports.fail_me());
 ```
         </script>
         </section>
 
-        <section data-markdown>
+        <section data-background="#ebecef" >
+          <h1>.WAT</h1>
+        </section>
+
+        <section data-background="#ebecef"  data-markdown>
         <script type="text/template">
-          ## Routing
-          ```javascript
-Router.map(function() {
-  this.route('about');
-  this.route('favorites', { path: '/favs' });
-});
+```javascript
+(module
+  (func (export "fail_me") (result i32)
+    i32.const 1
+    i32.const 0
+    i32.div_s))
 ```
         </script>
         </section>
 
+        <section data-background="#ebecef">
+          <img src="images/webdod/q3.png">
+        </section>
 
+        <section data-background="images/webdod/1995-2.jpg">
+        </section>
+
+
+        <section data-background="images/webdod/cars.jpg" data-state="has-dark-background">
+          <h1>Ramverk</h1>
+          <aside class="notes">
+            Val => omodernt
+          </aside>
+        </section>
 
 
         <section>
           <img data-src="images/perfectjs/react.svg" width="70%">
         </section>
 
-        <section data-markdown>
-        <script type="text/template">
-```javascript
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
-ReactDOM.render(
-  <CommentBox />,
-  document.getElementById('content')
-);
-```
-        </script>
-        </section>
-
-        <section data-background="#4F4E50">
-          <img data-src="images/perfectjs/flux.png" class="stretch">
+        <section>
+          <img data-src="images/webdod/vue.svg" width="70%">
         </section>
 
         <section>
-          <img data-src="images/perfectjs/meteor.png">
+          <img data-src="images/webdod/angular.svg" width="70%" style="transform: rotate(180deg)">
         </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```javascript
-Template.task.events({
-  'click .toggle-checked'() {
-    Tasks.update(this._id, {
-      $set: { checked: ! this.checked },
-    });
-  }
-});
-```
-        </script>
-        </section>
-
 
         <section data-background="white">
-          <img data-src="images/perfectjs/polymer-project.png" width="70%">
-        </section>
+          <img data-src="images/webdod/gtrends.png">
+          <aside class="notes">
+            Dippar = jul/nyar
+            Högre adpotion = djupare dippar
 
+            State of JS 2017 / Sacha Grief
+          </aside>
+        </section>
 
         <section>
           <img data-src="images/perfectjs/webcomponents.svg" width="40%">
           <h1>Web Components</h1>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            # HTML Templates
-          </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```html
-<template id="product">
-  <div>
-    <span class="name"></span>
-  </div>
-</template>
-```
-        </script>
-        </section>
-
-        <section data-markdown>
-					<script type="text/template">
-            # Shadow DOM
-          </script>
-        </section>
-
-        <section data-markdown>
-        <script type="text/template">
-```html
-<p id="hostElement"></p>
-```
-```javascript
-var shadow = document.querySelector('#hostElement').createShadowRoot();
-shadow.innerHTML = '<p>Here is some new text</p>';
-```
-        </script>
         </section>
 
         <section data-markdown>
@@ -378,6 +261,40 @@ document.registerElement("save-button", SaveBtn);
 ```
         </script>
         </section>
+        <section data-markdown>
+					<script type="text/template">
+            # HTML Templates
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<template id="product">
+  <div>
+    <span class="name"></span>
+  </div>
+</template>
+```
+        </script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            # Shadow DOM
+          </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+```html
+<p id="hostElement"></p>
+```
+```javascript
+var shadow = document.querySelector('#hostElement').createShadowRoot();
+shadow.innerHTML = '<p>Here is some new text</p>';
+```
+        </script>
+        </section>
 
         <section data-markdown>
 					<script type="text/template">
@@ -395,70 +312,181 @@ document.registerElement("save-button", SaveBtn);
         </script>
         </section>
 
-        <section data-markdown>
-					<script type="text/template">
-            # Webpack
-          </script>
+
+        <section data-background="rgb(41, 34, 21)">
+          <img data-src="images/webdod/css.gif" style="height: 90vh">
         </section>
 
-        <section data-markdown>
+
+        <section>
+          <img data-src="images/webdod/sass.png">
+        </section>
+
+        <section data-background="rgb(166, 44, 36)">
+          <img data-src="images/webdod/houdini.jpg">
+        </section>
+
+
+
+        <section data-background="rgb(166, 44, 36)"  data-state="has-dark-background">
+          <h1>CSS Painting API</h1>
+        </section>
+
+        <section data-background="#222">
+          <img data-src="images/webdod/smooth.png">
+        </section>
+
+        <section data-background="#222" data-state="has-dark-background" data-markdown>
         <script type="text/template">
-```javascript
-// content.js
-module.exports = "Hello from content.js.";
-```
-```javascript
-// index.js
-document.write(require("./content.js")); // Prints: Hello from content.js
+```css
+@supports (mask-image: paint(smooth-corners)) {
+  .el {
+    mask-image: paint(smooth-corners);
+    --smooth-corners: 2.6;
+  }
+}
 ```
         </script>
         </section>
 
+        <section data-background="#222" data-state="has-dark-background" data-markdown>
+        <script type="text/template">
+```javascript
+registerPaint('smooth-corners', class {
+    static get inputProperties() {
+        return [
+            '--smooth-corners'
+        ]
+    }
+    paint(ctx, geom, properties) {
+        // Math...
+        ctx.fill()
+    }
+})
+```
+        </script>
+        </section>
+
+        <section data-background="rgb(166, 44, 36)"  data-state="has-dark-background">
+          <h1>CSS Layout API</h1>
+        </section>
+
+        <section data-background="rgb(166, 44, 36)"  data-state="has-dark-background">
+          <h1>Font Metrics API</h1>
+        </section>
+
+        <section data-background="rgb(166, 44, 36)"  data-state="has-dark-background">
+          <h1>CSS Animation<br>Worklet API</h1>
+        </section>
+
+
+
+        <section data-background="images/webdod/cssawesome.jpg">
+        </section>
+
+        <section data-background="images/webdod/loading.gif">
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>Snabbhet</h1>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>HTTP/2</h1>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>AMP</h1>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>Service workers</h1>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background" data-markdown>
+        <script type="text/template">
+```javascript
+navigator.serviceWorker.register('service-worker.js', {scope: './'}).then(() => {
+  // Registered
+})
+
+// ...
+
+navigator.serviceWorker.controller.postMessage(message, [messageChannel.port2])
+```
+        </script>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>Offline</h1>
+        </section>
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background" data-markdown>
+        <script type="text/template">
+```javascript
+caches.open(CURRENT_CACHE).then((cache) => {
+  return cache.match(event.request)
+})
+```
+        </script>
+        </section>
+
+
+        <section data-background="images/webdod/speed.jpg" data-state="has-dark-background">
+          <h1>WASM + Houdini</h1>
+        </section>
+
+
+
         <section>
-          <img data-src="images/perfectjs/npm.png" width="70%">
+          <img data-src="images/webdod/guessjs2.png">
         </section>
 
-        <section data-markdown>
-					<script type="text/template">
-            # JQuery
-            http://youmightnotneedjquery.com/
-          </script>
+        <section data-transition="fade-out">
+          <img data-src="images/webdod/guessdemo1.png">
         </section>
 
-
-        <section data-markdown>
-					<script type="text/template">
-            # Uppgradering
-          </script>
+        <section data-transition="fade-in">
+          <img data-src="images/webdod/guessdemo2.png">
         </section>
 
 
-        <section data-markdown>
-					<script type="text/template">
-            # Frågor?
-          </script>
+        <section>
+          <img data-src="images/webdod/supressads.jpg">
         </section>
 
-        <section data-markdown  data-separator-notes="^Note:">
-					<script type="text/template">
-            # Summering
 
-            Note:
-            * Många starka ramverk med mycket traction - satsa på rätt häst
-            * Du kanske inte behöver ett ramverk
 
-            ### Målbekräftelse
-            * Känns det som att ni fått en överblick?
-          </script>
+        <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
+          <h1 style="margin-top: 15%">Frågor?</h1>
         </section>
 
-        <section data-markdown>
-					<script type="text/template">
-            # [edelst.am/idg](http://edelst.am/idg)
-          </script>
+        <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
+          <h1 style="margin-top: 15%">Summering</h1>
         </section>
 
-        <section data-background="images/thanks.gif">
+        <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
+          <h1 style="margin-top: 15%; margin-bottom: 0.5em">1995</h1>
+          <p>Det är inte 1995 längre</p>
+        </section>
+
+        <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
+          <h1 style="margin-top: 15%; margin-bottom: 0.5em">Nu</h1>
+          <p>Ny teknik blir tillgänglig snabbt</p>
+        </section>
+
+        <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
+          <h1 style="margin-top: 15%; margin-bottom: 0.5em">Testa</h1>
+          <p>Tänk om du hittar något du gillar?<p>
+        </section>
+
+
+        <section>
+          <img data-src="images/webdod/web.gif">
+          <h1 style="margin-bottom: 10px">Tack!</h1>
+          <p>
+            <a href="http://edelst.am/summit">edelst.am/summit</a>
+          </p>
         </section>
 
 			</div>
@@ -468,11 +496,13 @@ document.write(require("./content.js")); // Prints: Hello from content.js
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
         width: 1200,
         height: 800,
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 
