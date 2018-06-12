@@ -69,6 +69,10 @@
           </aside>
         </section>
 
+        <section data-background="rgb(24, 2, 13)">
+          <img src="images/webdod/yoda.jpg" style="height: 90vh">
+        </section>
+
         <section data-background="white">
           <img src="images/webdod/bash.png">
         </section>
@@ -85,12 +89,21 @@
           <img src="images/webdod/modules.png">
         </section>
 
+        <section data-markdown>
+					<script type="text/template">
+            ## Vad webbutveckling är idag
+          </script>
+        </section>
 
         <section data-markdown>
 					<script type="text/template">
-            # Agenda + Mål
+            ## Dialekter
+            ## Ramverk
+            ## Styling
+            ## Snabbhet
           </script>
         </section>
+
 
         <section data-state="slide-confetti" data-background="images/confetti.jpg">
         </section>
@@ -138,22 +151,88 @@ export class GameStateBar extends React.Component<{}, GameStateBarState> {
         </section>
 
 
+        <section data-background="#2d343a">
+          <img src="images/webdod/flow.svg" width="50%">
+        </section>
+
+
+        <section data-markdown data-background="#2d343a">
+        <script type="text/template">
+```javascript
+// @flow
+function square(n: number): number {
+  return n * n;
+}
+
+square("2"); // Error!
+```
+        </script>
+        </section>
+
+        <section data-background="white">
+          <img src="images/webdod/reason.svg" width="50%">
+        </section>
+
+        <section data-markdown data-background="white">
+        <script type="text/template">
+```coffeescript
+let rec factorial = (n) =>
+  n <= 0
+  ? 1
+  : n * factorial(n - 1);
+
+Js.log(factorial(6));
+```
+        </script>
+        </section>
+
 
         <section data-background="#60B5CC">
           <img src="images/webdod/elm.png">
+        </section>
+
+        <section data-markdown data-background="#60B5CC">
+        <script type="text/template">
+```elm
+import Html exposing (text)
+
+main =
+  text "Hello, World!"
+```
+        </script>
         </section>
 
         <section data-background="white">
           <img src="images/webdod/coffeescript.svg">
         </section>
 
-        <section data-background="#2d343a">
-          <img src="images/webdod/flow.svg" width="50%">
+        <section data-markdown>
+        <script type="text/template">
+```coffeescript
+square = (n) =>
+  n * n
+
+square 4 # => 16
+
+class Yolo extends Omg
+```
+### Coffeescript
+
+```javascript
+var Yolo, square;
+
+square = (n) => {
+  return n * n;
+};
+
+square(4); // => 16
+
+Yolo = class Yolo extends Omg {};
+```
+### Compiled JavaScript
+        </script>
         </section>
 
-        <section data-background="white">
-          <img src="images/webdod/reason.svg" width="50%">
-        </section>
 
         <section data-background="#f5da55">
           <img src="images/webdod/babel.svg" width="50%">
@@ -171,7 +250,9 @@ export class GameStateBar extends React.Component<{}, GameStateBarState> {
         <script type="text/template">
 ```javascript
 WebAssembly.instantiateStreaming(fetch('fail.wasm'))
-  .then(obj => obj.instance.exports.fail_me());
+  .then((obj) => {
+    obj.instance.exports.fail_me()
+  });
 ```
         </script>
         </section>
@@ -214,6 +295,33 @@ WebAssembly.instantiateStreaming(fetch('fail.wasm'))
 
         <section>
           <img data-src="images/webdod/vue.svg" width="70%">
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">[//]: # (<!--)
+```html
+  <template>
+    <p>{{ greeting }} World!</p>
+  </template>
+
+  <script>
+  module.exports = {
+    data: function () {
+      return {
+        greeting: 'Hello'
+      }
+    }
+  }
+  </script>
+
+  <style scoped>
+  p {
+    font-size: 2em;
+    text-align: center;
+  }
+  </style>
+```
+[//]: # (-->)</script>
         </section>
 
         <section>
@@ -471,13 +579,13 @@ caches.open(CURRENT_CACHE).then((cache) => {
         </section>
 
         <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
-          <h1 style="margin-top: 15%; margin-bottom: 0.5em">Nu</h1>
+          <h1 style="margin-top: 15%; margin-bottom: 0.5em">Nytt</h1>
           <p>Ny teknik blir tillgänglig snabbt</p>
         </section>
 
         <section data-background="images/webdod/sum.jpg" data-state="has-dark-background">
           <h1 style="margin-top: 15%; margin-bottom: 0.5em">Testa</h1>
-          <p>Tänk om du hittar något du gillar?<p>
+          <p>Det finns något för alla</p>
         </section>
 
 
